@@ -9,7 +9,7 @@ rutas.get('/', (req, res) => {
 });
 
 rutas.get('/api', (req, res) => {
-    res.send({ message: 'Hola, nueva ruta!' });
+    res.json({ message: 'Hola, nueva ruta!' });
 });
 
 rutas.post('/api/registrar-usuario', UsuarioControlador.registrarUsuario);
