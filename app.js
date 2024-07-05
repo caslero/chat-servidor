@@ -1,11 +1,10 @@
 import express from 'express';
+import { rutas } from './src/routers/routers.js';
+
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Ruta de prueba
-app.get('/', (req, res) => {
-  res.send('¡Hola, mundo!');
-});
+app.use(rutas);
 
 app.listen(port, () => {
   console.log(`Servidor escuchando en el puerto ${port}`);
