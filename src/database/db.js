@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Configuración de la conexión a la base de datos
-export const sequelize = new Sequelize(process.env.POSTGRES_URL, {
+export const sequelize = new Sequelize("postgres://default:URNVFZ6i2tYQ@ep-tiny-glitter-a44px9tx-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require", {
   dialectOptions: {
     ssl: {
       require: true,
