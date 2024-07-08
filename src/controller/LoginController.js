@@ -8,13 +8,13 @@ export class LoginControlador {
               const user = await User.findOne({ where: { correo } });
               if (!user || user.clave !== clave) {
                 console.log('Credenciales invalidas');
-                res.send({
+                res.json({
                   status: "error",
                   message: "Error al iniciar sesion..."
                 });
                 //return res.status(401).json({ error: 'Invalid credentials' });
               } else {
-                res.send({
+                res.json({
                   status: "ok",
                   message: "Usuario loggueado..."
                 });
