@@ -45,3 +45,23 @@ export const User = sequelize.define('User', {
     allowNull: false
   }
 });
+
+
+/**
+ //Eliminar Una tabla
+  async function dropUsersTable() {
+    try {
+      // Sincronizar el modelo de Usuario con la base de datos
+      await sequelize.sync();
+  
+      // Eliminar la tabla "Users"
+      await User.drop();
+  
+      console.log('Tabla "Users" eliminada correctamente.');
+    } catch (error) {
+      console.error('Error al eliminar la tabla "Users":', error);
+    }
+  }
+  
+  dropUsersTable();
+ */

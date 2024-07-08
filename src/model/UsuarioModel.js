@@ -9,6 +9,7 @@ export class UsuarioModelo {
         clave
       });
       return usuario;
+
     } catch (e) {
       console.error("Error al agregar el usuario: ", e);
       throw e;
