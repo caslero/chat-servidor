@@ -1,7 +1,10 @@
 import express from 'express';
 import { rutas } from './src/routers/routers.js';
 import cookieParser from 'cookie-parser';
-import cors from 'cors'
+import cors from 'cors';
+import { sequelize } from './src/database/db.js';
+import { User } from './src/database/db.js';
+
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -21,6 +24,25 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Credentials', 'true');
   next();
 });
+
+
+  (async () => {
+    try {
+      await sequelize.authenticate();
+      console.log('Conexión establecida con la base de datos');
+  
+      await User.sync({ force: false }); // Crea la tabla si no existe, o la actualiza si hay cambios
+      console.log('Tabla de usuarios sincronizada');
+    } catch (error) {
+      console.error('Error al conectar con la base de datos:', err);
+    }
+  })();
+
+
+
+
+
+
 
 app.use(rutas);
 

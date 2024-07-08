@@ -1,5 +1,6 @@
 import express from 'express';
 import { UsuarioControlador } from '../controller/UsuarioController.js';
+import { LoginControlador } from '../controller/LoginController.js';
 
 export const rutas = express.Router();
 
@@ -9,3 +10,4 @@ rutas.get('/', (req, res) => {
 });
 
 rutas.post('/api/registrar-usuario', UsuarioControlador.registrarUsuario);
+rutas.post('/api/login', LoginControlador.iniciarSesion);
