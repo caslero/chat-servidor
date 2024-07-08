@@ -34,8 +34,7 @@ export const User = sequelize.define('User', {
   },
   clave: {
     type: Sequelize.STRING,
-    allowNull: false,
-    unique: true
+    allowNull: false
   },
   createdAt: {
     type: Sequelize.DATE,
